@@ -1,22 +1,28 @@
 #include "list_queue.h"
 
-
 void init_queue(queue *q)
 {
-  // Add your init_queue
+    q->size = 0;
+    q->front = 0;
+    q->rear = 0;
 }
 
 int empty(queue *q)
 {
-  // Add your empty function  
+  return (q->front == q->rear);
 }
 
 void enqueue(queue *q, int x)
 {
-  // Add your enqueue function
+  q->rear = x;
+  q->rear = q->rear +1;
+  q->size = q->size -1; 
 }
 
 int dequeue(queue *q)
 {
-  // Add your dequeue function
+int dequeueing = (int)q->front;
+q->front = q->front+1;
+q->size = q->size +1;
+return dequeueing;
 }
